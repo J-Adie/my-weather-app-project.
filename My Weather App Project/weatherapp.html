@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Freehand&family=Nanum+Myeongjo&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <title>Weather Application</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            autofocus
+            autocomplete="off"
+            id="search-input"
+          />
+          <input type="submit" value="search" class="search-button" />
+        </form>
+      </header>
+
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 class="current-city">Nairobi</h1>
+            <p>
+              <span class="current-date"> Tuesday 08:26</span>, broken clouds
+              <br />
+              Humidity: <strong>86%</strong> Wind:
+              <strong>1.54km/h</strong>
+            </p>
+          </div>
+          <div class="curent-temperature">
+            <span class="current-temperature-icon">🌞</span>
+            <span class="current-temperature-value"> 10</span>
+            <span class="current-temperature-unit">°C</span>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          This project was coded by
+          <a href="#" target="_blank">Adie</a> and is
+          <a href="#" target="_blank">open-sourced on GitHub </a> and
+          <a href="#" target="_blank">hosted on Netlify</a>
+        </p>
+      </footer>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
