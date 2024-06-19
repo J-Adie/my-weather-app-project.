@@ -24,25 +24,27 @@ currentDate.innerHTML = `${day} ${hours}:${minutes}`;
 function showCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");
+  let city = searchInput.value;
 
   let currentCity = document.querySelector(".current-city");
 
-  currentCity.innerHTML = searchInput.value;
+  currentCity.innerHTML = city;
+
+  let apiKey = "b95783ofe75bc9bb0245016aaae0215ta";
+
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}$units=metric`;
+
+  axios.get(apiUrl).then(showTemperature);
 }
 
 let form = document.querySelector(".search-form");
 form.addEventListener("submit", showCity);
 
 function showTemperature(response) {
+  console.log(response);
   let currentTemperature = document.querySelector(".current-temperature-value");
   currentTemperature.innerHTML = Math.round(response.data.temperature);
 
   let currentCity = document.querySelector(".current-city");
   currentCity.innerHTML = response.data.city;
 }
-
-let apiKey = "95783ofe75bc9bb0245016aaae0215ta";
-let city = document.querySelector("#search-input").value;
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}$units=metric`;
-
-axios.get(apiUrl).then(showTemperature);
